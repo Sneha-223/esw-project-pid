@@ -39,7 +39,8 @@ const SignUp = (props) => {
     };
 
     axios
-      .post("http://localhost:5000/signup", newUser)
+      //.post("http://localhost:5000/signup", newUser)
+      .post("/api/signup", newUser)
       .then((response) => {
         alert("Created\t" + response.data.name);
         console.log(response.data);

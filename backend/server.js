@@ -29,6 +29,8 @@ mongoose.connect("mongodb://localhost:27017/ews",{
 //app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(bodyParser.json());
 
+app.use("/api", router)
+
 app.get('/', function(req, res) {
     res.send('hello');
 });

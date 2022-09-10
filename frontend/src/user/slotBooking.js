@@ -18,7 +18,8 @@ const SlotBooking = (props) => {
 
     useEffect(() => {
         axios
-          .get("http://localhost:5000/getfreeslots")
+          //.get("http://localhost:5000/getfreeslots")
+          .get("/api/getfreeslots")
           .then((res) => {
             // console.log(res.data)
             setAllslots(res.data)
@@ -49,7 +50,8 @@ const SlotBooking = (props) => {
     const getAllSlots = (event) => {
         event.preventDefault();
         axios
-            .get("http://localhost:5000/createslots")
+            // .get("http://localhost:5000/createslots")
+            .get("/api/createslots")
             .then((response) => {
                 console.log(response.data);
             })
@@ -72,7 +74,8 @@ const SlotBooking = (props) => {
         var user_id = 0;
 
         axios
-            .post("http://localhost:5000/assignslots", newUser)
+            // .post("http://localhost:5000/assignslots", newUser)
+            .post("/api/assignslots", newUser)
             .then((response) => {
                 user_id = response.data;
                 alert("Logged in");

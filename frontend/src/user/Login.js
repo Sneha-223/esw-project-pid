@@ -32,7 +32,8 @@ const Login = (props) => {
         var user_id = 0;
 
         axios
-            .post("http://localhost:5000/login", newUser)
+            //.post("http://localhost:5000/login", newUser)
+            .post("/api/login", newUser)
             .then((response) => {
                 user_id = response.data;
                 alert("Logged in");
